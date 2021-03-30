@@ -31,20 +31,6 @@ decimalTextArea.addEventListener('keydown', (event) => {
 
 button.addEventListener('click', () => {});
 
-//dec to binary
-function decToBinary(n) {
-  const toArr = n.toString().split('');
-  let newArr = [];
-  for (let i = 0; i < toArr.length; i++) {
-    if (Number(toArr[i]) === 1) {
-      newArr.push(Math.pow(2, toArr.length - (i + 1)));
-    }
-  }
-  return newArr.reduce((curr, total) => curr + total);
-}
-
-console.log(decToBinary(1010));
-
 //binary to dec fn
 function binaryToDec(num) {
   const toArr = num.toString().split('');
