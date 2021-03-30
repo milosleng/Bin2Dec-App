@@ -46,6 +46,23 @@ console.log(binaryToDec(1000110));
 
 //dec to binary fn
 
+function decimalToBin(num) {
+  let binaryArr = [];
+  let currNum = num;
+  while (currNum > 0.5) {
+    if (currNum % 2 === 0) {
+      binaryArr.push(0);
+      currNum = currNum / 2;
+    } else if (currNum % 2 > 0) {
+      binaryArr.push(1);
+      currNum = (currNum - (currNum % 2)) / 2;
+    }
+  }
+  return binaryArr.reverse();
+}
+
+console.log(decimalToBin(5));
+
 //check if you can convert negative values too!
 
 //checking the backspace keycode
