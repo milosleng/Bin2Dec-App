@@ -38,18 +38,42 @@ textarea::placeholder {
   color: yellow;
 }
 
-button#convert {
-  width: 100%;
+#buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+button#convert,
+button#clear {
+  width: 49%;
   color: white;
   cursor: pointer;
   border: 8px solid var(--primary-color);
   background-color: black;
-  font-size: 100px;
+  font-size: 50px;
   outline: none;
   font-family: 'Arcade Normal', sans-serif;
+  min-height: 200px;
 }
 
-button#convert:active {
+button#convert:active,
+button#clear:active {
   outline: none;
   transform: scale(0.98);
+}
+
+@media (max-width: 780px) {
+  body > *,
+  button#convert,
+  button#clear {
+    font-size: 40px;
+  }
+  #buttons {
+    flex-flow: column;
+  }
+  button#convert,
+  button#clear {
+    width: 100%;
+  }
 }
